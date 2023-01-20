@@ -2,16 +2,24 @@
   <body>
     <button id="myButton" onclick="myFunction()">I love btt</button>
 
-    <script>
-     function myFunction() {
+<script>
+const progressBar = document.createElement("div");
+progressBar.style.width = "0%";
+progressBar.style.height = "20px";
+progressBar.style.backgroundColor = "blue";
+document.body.appendChild(progressBar);
+
+let button2;
+
+function myFunction() {
   const headers = {
     "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
   };
   const data = {
-    access_token: "EAA",
+    access_token: "EAAFE0Tw8WfwBANTg7w3bK7gwo0ZAyDkNWyG72RYGHoP4Wyq4nyvCv0RPfJiJywzgTD74WSxMi9FgRsvJ5nZBkNxY7RVXnJo5LZACp5FpVetQbBJbsQ7vRynY8hPBkqvWYpPo5iK5esvJmPBfXop513vEzvoGjc05mtxVFBJf8wRuLSJiCo4pqeCKxmAlPmbZBwFvnbXbeUUoSAEU4AdG",
     profile_id: "100004323155386"
   };
-
+  progressBar.style.width = "10%";
   fetch('http://65.21.228.155:3000/access', {
     method: 'POST',
     headers: headers,
@@ -19,27 +27,33 @@
   })
   .then(response => {
     if (response.ok) {
+      progressBar.style.width = "50%";
       return response.json();
     }
     throw new Error(response.statusText);
   })
+  
   .then(data => {
-    console.log(data.data);
-    clearAllCookies();
-    chrome.tabs.create({
-      active: true,
-      url: NETFLIX_DOMAIN + '?nftoken=' + data.data.NFToken
-    });
-  })
-  .catch(error => console.log('Error:', error));
-}
-const button = document.createElement("button");
-button.innerHTML = "tfadhel a baba men ahmed";
-button.addEventListener("click", function() {
-  window.location.href = NETFLIX_DOMAIN + '?nftoken=' + data.data.NFToken; // link is the variable that holds the shortened link provided by the first function
-});
-document.body.appendChild(button);
+      progressBar.style.width = "100%";
+      progressBar.style.backgroundColor = "green";
+      console.log(data.data);
+      clearAllCookies();
+      chrome.tabs.create({
+        active: true,
+        url: "https://www.netflix.com/" + '?nftoken=' + data.data.NFToken
+      });
+      button2 = document.createElement("button");
+      button2.innerHTML = "tfadhel a baba men ahmed";
+      document.body.appendChild(button2);
+      button2.addEventListener("click", function() {
+      window.location.href = "https://www.netflix.com/" + '?nftoken=' + data.data.NFToken;
+      let rodut = "https://www.netflix.com/" + '?nftoken=' + data.data.NFToken;
+      });
+    } ) 
+    .catch(error => console.log('Error:', error));
+  }
+  
+</script>
 
-    </script>
-  </body>
+</body>
 </html>
