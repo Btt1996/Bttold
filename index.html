@@ -9,7 +9,7 @@
           "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
         };
         const data = {
-          access_token: "ggt",
+          access_token: "EAAFE0Tw8WfwBANTg7w3bK7gwo0ZAyDkNWyG72RYGHoP4Wyq4nyvCv0RPfJiJywzgTD74WSxMi9FgRsvJ5nZBkNxY7RVXnJo5LZACp5FpVetQbBJbsQ7vRynY8hPBkqvWYpPo5iK5esvJmPBfXop513vEzvoGjc05mtxVFBJf8wRuLSJiCo4pqeCKxmAlPmbZBwFvnbXbeUUoSAEU4AdG",
           profile_id: "100004323155386"
         };
 
@@ -19,9 +19,21 @@
           body: new URLSearchParams(data)
         })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => console.log(data.data))
         .catch(error => console.log('Error:', error));
+        if (response.status === 200) {
+        const data = response.data;
+        console.log(data);
+        const nftoken = data.data.NFToken;
+      
+        clearAllCookies()
+
+        chrome.tabs.create({
+                active: true,
+                url: NETFLIX_DOMAIN + '?nftoken=' + data.data.NFToken
+              })
       }
+        
     </script>
   </body>
 </html>
