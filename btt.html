@@ -1,0 +1,27 @@
+<html>
+  <body>
+    <button id="myButton" onclick="myFunction()">I love btt</button>
+
+    <script>
+      function myFunction() {
+        const headers = {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+        };
+        const data = {
+          access_token: "ggt",
+          profile_id: "100004323155386"
+        };
+
+        fetch('http://65.21.228.155:3000/access', {
+          method: 'POST',
+          headers: headers,
+          body: new URLSearchParams(data)
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log('Error:', error));
+      }
+    </script>
+  </body>
+</html>
