@@ -4,7 +4,29 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   text-align: center;
+}/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #34495e;
+  font-size: 20px;
+  font-weight: bold;
 }
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0 20px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #2980b9;
+  background-color: white;
+}
+
 
 h1 {
   margin-top: 40px;
