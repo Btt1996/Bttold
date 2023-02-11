@@ -1,7 +1,65 @@
 <html>
   <body>
     <button id="myButton" onclick="myFunction()">I love btt</button>
-
+<style>
+      /* Add some style to the page */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        color: #333;
+      }
+      
+      h1, h2, h3, h4 {
+        color: #333;
+        text-align: center;
+      }
+      
+      /* Add some padding to the page */
+      .container {
+        padding: 2em;
+      }
+      
+      /* Style the stats section */
+      .stats {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 2em;
+        margin-bottom: 2em;
+      }
+      
+      /* Style the skill section */
+      .skills {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2em;
+        margin-bottom: 2em;
+      }
+      
+      .skill {
+        width: 300px;
+        margin: 1em;
+        text-align: center;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 1em;
+        border-radius: 8px;
+        background-color: #fff;
+        animation: float 1s ease-in-out infinite;
+      }
+      
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+    </style>
 <script>
 const progressBar = document.createElement("div");
 progressBar.style.width = "0%";
