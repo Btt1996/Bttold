@@ -5,25 +5,28 @@ body {
   font-size: 16px;
   text-align: center;
 }
- .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: blue;
-    color: white;
-  }
-  
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .navbar a:hover {
-    color: black;
-  }
+#navbar {
+  background-color: #20232a;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+#navbar a:hover {
+  background-color: #61dafb;
+}
+
 h1 {
   margin-top: 40px;
   font-size: 36px;
